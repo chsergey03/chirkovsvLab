@@ -3,7 +3,12 @@ package main.java.tech.reliab.course.chirkovsv.bank.entity;
 import java.math.BigDecimal;
 import java.util.Objects;
 
+import lombok.Getter;
+import lombok.Setter;
+
 // сущность "банк".
+@Getter
+@Setter
 public class Bank {
   private int id;
   private String name;
@@ -19,78 +24,6 @@ public class Bank {
     final String name
   ) {
     this.name = name;
-  }
-
-  public int getId() {
-    return id;
-  }
-
-  public void setId(final int newIdValue) {
-    id = newIdValue;
-  }
-
-  public String getName() {
-    return name;
-  }
-
-  public void setName(final String newNameValue) {
-    name = newNameValue;
-  }
-
-  public int getNOffices() {
-    return nOffices;
-  }
-
-  public void setNOffices(final int newNOfficesValue) {
-    nOffices = newNOfficesValue;
-  }
-
-  public int getNAtms() {
-    return nAtms;
-  }
-
-  public void setNAtms(final int newNAtmsValue) {
-    nAtms = newNAtmsValue;
-  }
-
-  public int getNEmployees() {
-    return nEmployees;
-  }
-
-  public void setNEmployees(final int newNEmployeesValue) {
-    nEmployees = newNEmployeesValue;
-  }
-
-  public int getNClients() {
-    return nUsers;
-  }
-
-  public void setNClients(final int newNUsersValue) {
-    nUsers = newNUsersValue;
-  }
-
-  public BigDecimal getRating() {
-    return rating;
-  }
-
-  public void setRating(final BigDecimal newRatingValue) {
-    rating = newRatingValue;
-  }
-
-  public BigDecimal getTotalMoneyAmount() {
-    return totalMoneyAmount;
-  }
-
-  public void setTotalMoneyAmount(final BigDecimal newTotalMoneyAmountValue) {
-    totalMoneyAmount = newTotalMoneyAmountValue;
-  }
-
-  public BigDecimal getInterestRate() {
-    return interestRate;
-  }
-
-  public void setInterestRate(final BigDecimal newInterestRateValue) {
-    interestRate = newInterestRateValue;
   }
 
   public void incNOffices(final int incValue) {
@@ -109,7 +42,9 @@ public class Bank {
     nUsers += incValue;
   }
 
-  public void incTotalMoneyAmount(final BigDecimal incValue) { totalMoneyAmount = totalMoneyAmount.add(incValue); }
+  public void incTotalMoneyAmount(final BigDecimal incValue) {
+    totalMoneyAmount = totalMoneyAmount.add(incValue);
+  }
 
   @Override
   public boolean equals(Object obj) {

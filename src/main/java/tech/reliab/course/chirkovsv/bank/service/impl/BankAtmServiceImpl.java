@@ -144,7 +144,7 @@ public class BankAtmServiceImpl implements BankAtmService {
    */
   @Override
   public void switchIsDepositAvailable(final BankAtm atm) {
-    atm.setIsDepositAvailable(!atm.getIsDepositAvailable());
+    atm.setDepositAvailable(!atm.isDepositAvailable());
   }
 
   /**
@@ -157,7 +157,7 @@ public class BankAtmServiceImpl implements BankAtmService {
    */
   @Override
   public void switchIsWithdrawAvailable(final BankAtm atm) {
-    atm.setIsWithdrawAvailable(!atm.getIsWithdrawAvailable());
+    atm.setDepositAvailable(!atm.isWithdrawAvailable());
   }
 
   /**
@@ -171,7 +171,7 @@ public class BankAtmServiceImpl implements BankAtmService {
       final BankAtm atm,
       final BigDecimal moneyAmountToDeposit
   ) {
-    if (atm.getIsDepositAvailable()) {
+    if (atm.isDepositAvailable()) {
       if (moneyAmountToDeposit.compareTo(BigDecimal.ZERO) > 0) {
         atm.incMoneyAmount(moneyAmountToDeposit);
       } else {
@@ -194,7 +194,7 @@ public class BankAtmServiceImpl implements BankAtmService {
       final BankAtm atm,
       final BigDecimal moneyAmountToWithdraw
   ) {
-    if (atm.getIsWithdrawAvailable()) {
+    if (atm.isWithdrawAvailable()) {
       if (moneyAmountToWithdraw.compareTo(BigDecimal.ZERO) <= 0) {
         throw new IllegalArgumentException(
             "money amount to withdraw must be greater than zero"

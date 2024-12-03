@@ -153,7 +153,7 @@ public class BankOfficeServiceImpl implements BankOfficeService {
    */
   @Override
   public void switchIsAtmPlacingAvailable(final BankOffice office) {
-    office.setIsAtmPlacingAvailable(!office.getIsAtmPlacingAvailable());
+    office.setAtmPlacingAvailable(!office.isAtmPlacingAvailable());
   }
 
   /**
@@ -166,7 +166,7 @@ public class BankOfficeServiceImpl implements BankOfficeService {
    */
   @Override
   public void switchIsCreditRegistrationAvailable(final BankOffice office) {
-    office.setIsCreditRegistrationAvailable(!office.getIsCreditRegistrationAvailable());
+    office.setCreditRegistrationAvailable(!office.isCreditRegistrationAvailable());
   }
 
   /**
@@ -179,7 +179,7 @@ public class BankOfficeServiceImpl implements BankOfficeService {
    */
   @Override
   public void switchIsDepositAvailable(final BankOffice office) {
-    office.setIsDepositAvailable(!office.getIsDepositAvailable());
+    office.setDepositAvailable(!office.isDepositAvailable());
   }
 
   /**
@@ -192,7 +192,7 @@ public class BankOfficeServiceImpl implements BankOfficeService {
    */
   @Override
   public void switchIsWithdrawAvailable(final BankOffice office) {
-    office.setIsWithdrawAvailable(!office.getIsWithdrawAvailable());
+    office.setWithdrawAvailable(!office.isWithdrawAvailable());
   }
 
   /**
@@ -203,7 +203,7 @@ public class BankOfficeServiceImpl implements BankOfficeService {
    */
   @Override
   public void addAtm(final BankOffice office, final BankAtm atm) {
-    if (office.getIsAtmPlacingAvailable()) {
+    if (office.isAtmPlacingAvailable()) {
       Utils.validateParametersOnNonNullValues(office, atm);
       Utils.validateReferringToParentEntity(office, atm, false);
 
@@ -239,7 +239,7 @@ public class BankOfficeServiceImpl implements BankOfficeService {
       final BankOffice office,
       final BigDecimal moneyAmountToDeposit
   ) {
-    if (office.getIsDepositAvailable()) {
+    if (office.isDepositAvailable()) {
       if (Utils.isBigDecimalMoreThanZero(moneyAmountToDeposit)) {
         office.incTotalMoneyAmount(moneyAmountToDeposit);
 
@@ -266,7 +266,7 @@ public class BankOfficeServiceImpl implements BankOfficeService {
       final BankOffice office,
       final BigDecimal moneyAmountToWithdraw
   ) {
-    if (office.getIsWithdrawAvailable()) {
+    if (office.isWithdrawAvailable()) {
       if (!Utils.isBigDecimalMoreThanZero(moneyAmountToWithdraw)) {
         throw new IllegalArgumentException(
             "money amount to withdraw must be greater than zero"

@@ -2,7 +2,12 @@ package main.java.tech.reliab.course.chirkovsv.bank.entity;
 
 import java.math.BigDecimal;
 
+import lombok.Getter;
+import lombok.Setter;
+
 // сущность "банкомат".
+@Getter
+@Setter
 public class BankAtm {
   public enum Status {
     WORKING,
@@ -37,102 +42,6 @@ public class BankAtm {
     this.isDepositAvailable = isDepositAvailable;
     this.isWithdrawAvailable = isWithdrawAvailable;
     this.maintenanceCost = maintenanceCost;
-  }
-
-  public int getId() {
-    return id;
-  }
-
-  public void setId(final int newIdValue) {
-    id = newIdValue;
-  }
-
-  public String getName() {
-    return name;
-  }
-
-  public void setName(final String newName) {
-    name = newName;
-  }
-
-  public String getAddress() {
-    return address;
-  }
-
-  public void setAddress(final String newAddressValue) {
-    address = newAddressValue;
-  }
-
-  public Status getStatus() {
-    return status;
-  }
-
-  public void setStatus(final Status newStatusValue) {
-    status = newStatusValue;
-  }
-
-  public Bank getBank() {
-    return bank;
-  }
-
-  public void setBank(final Bank newBank) {
-    bank = newBank;
-  }
-
-  public BankOffice getOffice() {
-    return office;
-  }
-
-  public void setOffice(final BankOffice newOffice) {
-    office = newOffice;
-  }
-
-  public String getLocationInTheOffice() {
-    return locationInTheOffice;
-  }
-
-  public void setLocationInTheOffice(final String newLocationInTheOfficeValue) {
-    locationInTheOffice = newLocationInTheOfficeValue;
-  }
-
-  public Employee getServingEmployee() {
-    return servingEmployee;
-  }
-
-  public void setServingEmployee(final Employee newServingEmployee) {
-    servingEmployee = newServingEmployee;
-  }
-
-  public boolean getIsDepositAvailable() {
-    return isDepositAvailable;
-  }
-
-  public void setIsDepositAvailable(final boolean newIsDepositAvailableValue) {
-    isDepositAvailable = newIsDepositAvailableValue;
-  }
-
-  public boolean getIsWithdrawAvailable() {
-    return isWithdrawAvailable;
-  }
-
-  public void setIsWithdrawAvailable(final boolean newIsWithdrawAvailableValue) {
-    isWithdrawAvailable = newIsWithdrawAvailableValue;
-  }
-
-  public BigDecimal getMoneyAmount() {
-    return moneyAmount;
-  }
-
-  public void setMoneyAmount(final BigDecimal newMoneyAmountValue) {
-    moneyAmount = newMoneyAmountValue;
-  }
-
-  public BigDecimal getMaintenanceCost() {
-    return maintenanceCost;
-  }
-
-  public void setMaintenanceCost(final BigDecimal newMaintenanceCostValue) {
-    maintenanceCost = newMaintenanceCostValue;
   }
 
   public void incMoneyAmount(final BigDecimal incValue) {

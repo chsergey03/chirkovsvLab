@@ -3,7 +3,12 @@ package main.java.tech.reliab.course.chirkovsv.bank.entity;
 import java.util.Objects;
 import java.math.BigDecimal;
 
+import lombok.Getter;
+import lombok.Setter;
+
 // сущность "платёжный счёт".
+@Getter
+@Setter
 public class PaymentAccount extends Account {
   private int id;
   private BigDecimal moneyAmount = BigDecimal.ZERO;
@@ -16,22 +21,6 @@ public class PaymentAccount extends Account {
     super(bank, user);
 
     this.moneyAmount = moneyAmount;
-  }
-
-  public int getId() {
-    return id;
-  }
-
-  public void setId(final int newIdValue) {
-    id = newIdValue;
-  }
-
-  public BigDecimal getMoneyAmount() {
-    return moneyAmount;
-  }
-
-  public void setMoneyAmount(final BigDecimal newMoneyAmountValue) {
-    moneyAmount = newMoneyAmountValue;
   }
 
   @Override

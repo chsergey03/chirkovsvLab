@@ -180,7 +180,7 @@ public class EmployeeServiceImpl implements EmployeeService {
    *                 или нет, на противоположный.
    */
   private void switchDoesWorkInTheOffice(final Employee employee) {
-    employee.setDoesWorkInTheOffice(employee.getDoesWorkInTheOffice());
+    employee.setWorkInTheOffice(employee.isWorkInTheOffice());
   }
 
   /**
@@ -193,7 +193,7 @@ public class EmployeeServiceImpl implements EmployeeService {
    */
   @Override
   public void switchHasAbilityToRegisterCredits(final Employee employee) {
-    employee.setHasAbilityToRegisterCredits(employee.getHasAbilityToRegisterCredits());
+    employee.setAbilityToRegisterCredits(employee.isAbilityToRegisterCredits());
   }
 
   /**
