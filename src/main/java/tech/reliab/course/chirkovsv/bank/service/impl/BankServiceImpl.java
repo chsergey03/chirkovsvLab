@@ -317,7 +317,7 @@ public class BankServiceImpl implements BankService {
     if (bankToDelete.getNOffices() +
         bankToDelete.getNAtms() +
         bankToDelete.getNEmployees() +
-        bankToDelete.getNClients() > 0) {
+        bankToDelete.getNUsers() > 0) {
       throw new IllegalStateException("cannot delete bank with associated entities.");
     }
 

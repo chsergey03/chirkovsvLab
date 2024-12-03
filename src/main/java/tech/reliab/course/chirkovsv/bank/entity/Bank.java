@@ -61,11 +61,11 @@ public class Bank {
     nEmployees = newNEmployeesValue;
   }
 
-  public int getNClients() {
+  public int getNUsers() {
     return nUsers;
   }
 
-  public void setNClients(final int newNUsersValue) {
+  public void setNUsers(final int newNUsersValue) {
     nUsers = newNUsersValue;
   }
 
